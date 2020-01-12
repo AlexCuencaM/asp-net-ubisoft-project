@@ -6,10 +6,12 @@
     <title>@ViewData["Title"] - Ubisoft</title>
 
     <environment include="Development">
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet'>
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment exclude="Development">
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
@@ -17,8 +19,16 @@
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+    @*<nav class="navbar navbar-inverse navbar-fixed-top">*@
+    <header>
+        <nav class="negro">
+            <a asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/logo.png" alt="LOGO" /></a>
+            <ul>                
+                <li><a asp-area="" asp-controller="Home" asp-action="Tienda">Tienda</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="AcercaDe">Acerca de</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Login">Login</a></li>
+            </ul>
+            @*<div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -30,23 +40,25 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Tienda</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Acerca De">Acerca de</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Login</a></li>
                 </ul>
             </div>
-        </div>
-    </nav>
+        </div>*@
+        </nav>
+    </header>
+    
 
     <partial name="_CookieConsentPartial" />
 
-    <div class="container body-content">
+    @*<div class="container body-content">*@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2020 - Ubisoft</p>
+            <small>&copy; 2019 Ubisoft.com - Todos los derechos reservados</small>
         </footer>
-    </div>
+    @*</div>*@
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>

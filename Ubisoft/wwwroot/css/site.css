@@ -1,37 +1,198 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
-body {
-    padding-top: 50px;
+html, body {
+    padding-top: 0px;
+    margin: 0px;
+    background-color: #464646;
+    color: #f2f2f2;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+h3 {
+    height: 40px;
+    font-size: 18px;
+}
+
+a {
+    color: #f2f2f2;
+    text-decoration: none;
+}
+
+    a:hover {
+        color: #f2f2f2;
+    }
+
+.negro a {
+    color: #f2f2f2;
+}
+
+    .negro a:hover {
+        color: #2f80ed;
+    }
+
+.azul a:hover {
+    color: #252424;
+}
+
+nav {
+    /* Style for "navbar" */
+    display: flex;
+    padding-bottom: 10px;
+    background-color: #252424;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    nav.verde {
+        background-color: #27ae60;
+    }
+
+    nav.azul {
+        background-color: #2f80ed;
+    }
+
+    nav.morado {
+        background-color: #9B51E0;
+    }
+
+    nav img {
+        /* Style for "logo" */
+        width: 77px;
+        height: 52px;
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    nav li {
+        padding-right: 40px;
+        list-style: none;
+    }
+        /* Se agregaron estas reglas
+ por que con el elemento a es necesario hacerlo de manera explicita */
+        nav li a {
+            color: black;
+            font-size: 18px;
+        }
+
+#banner {
+    /* Style for "960x114_25" */
+    padding: 0px;
+    width: 100%;
+    height: 10%;
+}
+
+/* La parte principal de la pagina */
+main {
+    padding: 5%;
+}
+
+.otro_main {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15%;
+}
+
+.media small {
+    padding: 5px;
+}
+
+article {
+    /* Style for "Background" */
+    background-color: #252424;
+    padding: 20px;
+}
+
+figure {
+    display: flex;
+}
+
+    figure img {
+        width: 110px;
+        height: 114px;
+        padding-right: 40px;
+    }
+
+.products {
+    /* Style for "Rectangle" */
+    display: flex;
+    justify-content: space-around;
+}
+
+.tienda {
+    padding: 10px;
+}
+
+    .tienda img {
+        /* Style for "Rectangle" */
+        width: 200px;
+        height: 200px;
+    }
+
+div.imagen {
+    display: flex;
+    justify-content: center;
+}
+
+li.compra {
+    list-style: none;
+    padding: 5px;
+}
+
+.media {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+button.compra {
+    /* Style for "Rectangle" */
+    border: none;
+    width: 172px;
+    height: 32px;
+    color: white;
+    background-color: #0c4a9b;
+}
+
+    button.compra:hover {
+        background-color: #27AE60;
+    }
+
+    button.compra:focus {
+        background-color: #219653;
+    }
+
+.titulo {
+    text-align: center;
     padding-bottom: 20px;
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.login {
+    padding: 10px;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+label {
+    display: inline-block;
+    width: 72px;
+    height: 20px;
+    padding-right: 40px;
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
+footer {
+    /* Style for "Footer" */
+    color: #0a0909;
+    padding: 20px;
+    background-color: #f2f2f2;
+    text-align: center;
 }
 
-/* QR code generator */
-#qrCode {
-    margin: 15px;
+.about {
+    text-align: justify;
 }
 
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
-    }
+.content {
+    display: block;
 }
