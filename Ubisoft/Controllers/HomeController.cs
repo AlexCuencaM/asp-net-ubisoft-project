@@ -39,12 +39,13 @@ namespace Ubisoft.Controllers
         }
 
         public IActionResult Login()
-        {
-            ViewData["Message"] = "Your contact page.";
-
+        {            
             return View();
         }
-
+        public IActionResult Store()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();

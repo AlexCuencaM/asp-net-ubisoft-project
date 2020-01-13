@@ -1,4 +1,6 @@
-﻿@{
+﻿@Model Producto
+
+@{
     ViewData["Title"] = "Home Page";
 }
 <!-- Comunicación segura tío -->
@@ -7,7 +9,7 @@
     <h1 class="titulo">Productos super conocidos</h1>
     @foreach(var producto in @Model)
     {
-    <article>
+    <article>        
         <h3>@producto.Nombre </h3>
         <figure>
             <img src=@producto.Ruta alt="LAPTOP">
