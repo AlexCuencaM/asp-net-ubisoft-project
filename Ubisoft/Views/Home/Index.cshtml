@@ -1,21 +1,14 @@
-﻿@{
+﻿@model List<Producto>
+@{
     ViewData["Title"] = "Home Page";
 }
 <!-- Comunicación segura tío -->
 <main>
-    <img alt="pc" id="banner" src="~/img/960x114_255,255,255_SOLOHPcom-Mas-Vendida-Laptop-HP-240-G6-LargeBanner.jpg"/>
+    <img alt="pc" id="banner" src="~/img/960x114_255,255,255_SOLOHPcom-Mas-Vendida-Laptop-HP-240-G6-LargeBanner.jpg" />
     <h1 class="titulo">Productos super conocidos</h1>
-    @foreach(var producto in @Model)
+    @foreach (var productoDestacado in Model)
     {
-    <article>        
-        <h3>@producto.Titulo </h3>
-        <figure>
-            <img src=@producto.Ruta alt="LAPTOP">
-            <div class="content2">
-                <p>@producto.Descripcion</p>
-                <button class="compra">Comprar producto</button>
-            </div>
-        </figure>
-    </article>
-    }    
+        <partial name="ListaProductosDestacados" model="productoDestacado"/>
+    }
+
 </main>

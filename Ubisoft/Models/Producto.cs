@@ -9,6 +9,9 @@ namespace Ubisoft.Models
         public string Titulo { get; set; }
         public string Descripcion { get; set; }
         public string Ruta { get; set; }
-        public double Precio { get; set; }
+        public double Precio { get; set; } 
+        //Puede ser opcional :D
+        public List<CaractersisticaProducto> features { get; set; }
+
     }
 }

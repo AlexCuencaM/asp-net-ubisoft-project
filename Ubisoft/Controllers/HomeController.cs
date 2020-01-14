@@ -25,8 +25,8 @@ namespace Ubisoft.Controllers
             List<Producto> productos = new List<Producto>()
             {
                 
-                new Producto{Nombre ="SUPER Mini Laptop HP STREAM 11", Descripcion=descripcion,Ruta=ruta },
-                new Producto{Nombre="IDEAL Laptop HP 17", Descripcion=descripcion2, Ruta=ruta2},
+                new Producto{Titulo ="SUPER Mini Laptop HP STREAM 11", Descripcion=descripcion,Ruta=ruta },
+                new Producto{Titulo="IDEAL Laptop HP 17", Descripcion=descripcion2, Ruta=ruta2},
 
             };
             return View(productos);
