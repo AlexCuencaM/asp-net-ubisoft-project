@@ -15,8 +15,7 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
-<body>
-    @*<nav class="navbar navbar-inverse navbar-fixed-top">*@
+<body>    
     <header>
         <nav class="negro">
             <a asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/logo.png" alt="LOGO" /></a>
@@ -24,38 +23,17 @@
                 <li><a asp-area="" asp-controller="Tienda" asp-action="Index">Tienda</a></li>
                 <li><a asp-area="" asp-controller="AcercaDe" asp-action="Index">Acerca de</a></li>
                 <li><a asp-area="" asp-controller="Login" asp-action="Index">Login</a></li>
-            </ul>
-            @*<div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Ubisoft</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Tienda</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Acerca De">Acerca de</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Login</a></li>
-                </ul>
-            </div>
-        </div>*@
+            </ul>            
         </nav>
     </header>
     
 
-    <partial name="_CookieConsentPartial" />
-
-    @*<div class="container body-content">*@
-        @RenderBody()
-        <hr />
+    <partial name="_CookieConsentPartial" />    
+        @RenderBody()  
         <footer>
             <small>&copy; 2019 Ubisoft.com - Todos los derechos reservados</small>
         </footer>
-    @*</div>*@
+    
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
