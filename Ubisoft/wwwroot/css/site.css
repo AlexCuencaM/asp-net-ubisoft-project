@@ -1,10 +1,22 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+:root {
+    --color-negro: #464646;
+    --color-negro-oscuro: #252424;
+    --color-blanco: #f2f2f2;
+    --color-azul: #0c4a9b;
+    --color-verde: #27ae60;
+    --color-verde-oscuro: #219653;
+    --color-morado: #9B51E0;
+    --size-titulo-producto: 18px;
+}
+
 html, body {
     padding-top: 0px;
     margin: 0px;
-    background-color: #464646;
-    color: #f2f2f2;
+    background-color: var(--color-negro);
+    color: var(--color-blanco);
     font-family: Roboto;
     font-size: 16px;
     font-weight: 400;
@@ -12,49 +24,49 @@ html, body {
 
 h3 {
     height: 40px;
-    font-size: 18px;
+    font-size: var(--size-titulo-producto);
 }
 
 a {
-    color: #f2f2f2;
+    color: var(--color-blanco);
     text-decoration: none;
 }
 
     a:hover {
-        color: #f2f2f2;
+        color: var(--color-blanco);
     }
 
 .negro a {
-    color: #f2f2f2;
+    color: var(--color-blanco);
 }
 
     .negro a:hover {
-        color: #2f80ed;
+        color: var(--color-azul);
     }
 
 .azul a:hover {
-    color: #252424;
+    color: var(--color-negro);
 }
 
 nav {
     /* Style for "navbar" */
     display: flex;
     padding-bottom: 10px;
-    background-color: #252424;
+    background-color: var(--color-negro-oscuro);
     justify-content: space-between;
     align-items: center;
 }
 
     nav.verde {
-        background-color: #27ae60;
+        background-color: var(--color-verde);
     }
 
     nav.azul {
-        background-color: #2f80ed;
+        background-color: var(--color-azul);
     }
 
     nav.morado {
-        background-color: #9B51E0;
+        background-color: var(--color-morado);
     }
 
     nav img {
@@ -74,9 +86,13 @@ nav {
         /* Se agregaron estas reglas
  por que con el elemento a es necesario hacerlo de manera explicita */
         nav li a {
-            color: black;
-            font-size: 18px;
+            color: var(--color-negro-oscuro);
+            font-size: var(--size-titulo-producto);
         }
+
+.azul li a {
+    color: var(--color-blanco);
+}
 
 #banner {
     /* Style for "960x114_25" */
@@ -102,7 +118,7 @@ main {
 
 article {
     /* Style for "Background" */
-    background-color: #252424;
+    background-color: var(--color-negro-oscuro);
     padding: 20px;
 }
 
@@ -154,15 +170,15 @@ button.compra {
     width: 172px;
     height: 32px;
     color: white;
-    background-color: #0c4a9b;
+    background-color: var(--color-azul);
 }
 
     button.compra:hover {
-        background-color: #27AE60;
+        background-color: var(--color-verde);
     }
 
     button.compra:focus {
-        background-color: #219653;
+        background-color: var(--color-verde-oscuro);
     }
 
 .titulo {
@@ -183,9 +199,9 @@ label {
 
 footer {
     /* Style for "Footer" */
-    color: #0a0909;
+    color: var(--color-negro-oscuro);
     padding: 20px;
-    background-color: #f2f2f2;
+    background-color: var(--color-blanco);
     text-align: center;
 }
 
