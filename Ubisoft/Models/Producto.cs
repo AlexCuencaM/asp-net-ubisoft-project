@@ -11,7 +11,8 @@ namespace Ubisoft.Models
         public string Ruta { get; set; }
         public double Precio { get; set; } 
         //Puede ser opcional :D
-        public List<CaractersisticaProducto> features { get; set; }
+        public List<string> Features { get; set; }
+        public Producto() => Features = new List<string>();
 
     }
 }
