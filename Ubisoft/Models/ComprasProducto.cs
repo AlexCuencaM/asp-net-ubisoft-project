@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 namespace Ubisoft.Models
 {
     public class ComprasProducto
-    {       
-        public Persona Persona { get; set; }
+    {
+        public int Id { get; set; }
+        public Compra Compra { get; set; }
+        public Producto Producto { get; set; }
         public int Cantidad { get; set; }
         public double PrecioProducto { get; set; }
-        //Puede ser opcional :D
-        public List<Producto> Productos { get; set; }
 
     }
 }
