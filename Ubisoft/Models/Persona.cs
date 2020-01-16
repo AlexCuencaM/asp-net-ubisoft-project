@@ -7,6 +7,7 @@ namespace Ubisoft.Models
 {
     public class Persona
     {
+        public int Id { get; set; }
         public string Username { get; set; }
         public string Contraseña { get; set; }
     }

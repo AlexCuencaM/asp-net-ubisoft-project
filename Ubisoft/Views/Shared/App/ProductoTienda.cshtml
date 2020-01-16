@@ -5,11 +5,11 @@
         <img src=@Model.Ruta alt="articulo">
     </div>
     <ul>
-        @foreach (var features in Model.Features)
+        @*@foreach (var features in Model.Features)
         {
             <li>@features</li>
-        }
-        <li>Precio: $@Model.Precio</li>
+        }*@
+        <li>Precio: @Model.Precio.ToString("C2")</li>
         <li class="compra"><button class="compra">Comprar artefacto</button></li>
     </ul>
 </article>
