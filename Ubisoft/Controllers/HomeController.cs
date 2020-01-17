@@ -18,7 +18,7 @@ namespace Ubisoft.Controllers
 
         public IActionResult Index()
         {
-            List<Producto> productos = context.Productos.ToList();
+            var productos = context.Productos;
             return View(productos);
         }
         

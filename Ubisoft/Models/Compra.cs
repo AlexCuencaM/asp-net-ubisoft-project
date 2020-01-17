@@ -9,7 +9,9 @@ namespace Ubisoft.Models
     {
         public int Id { get; set; }
         public double PrecioTotal { get; set; }
+        public int PersonaId { get; set; }
         public Persona Comprador { get; set; }
         public DateTime FechaFactura { get; set; }
+        public List<ComprasProducto> ComprasProductos { get; set; }
     }
 }

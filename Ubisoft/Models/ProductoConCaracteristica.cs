@@ -5,15 +5,12 @@ using System.Threading.Tasks;
 
 namespace Ubisoft.Models
 {
-    public class ComprasProducto
+    public class ProductoConCaracteristica
     {
         public int Id { get; set; }
-        public int CompraId { get; set; }
         public int ProductoId { get; set; }
-        public Compra Compra { get; set; }
+        public int CaracteristicaId { get; set; }
         public Producto Producto { get; set; }
-        public int Cantidad { get; set; }
-        public double PrecioProducto { get; set; }
-
+        public Caractersistica Caractersistica { get; set; }
     }
 }
