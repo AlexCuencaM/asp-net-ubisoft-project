@@ -10,6 +10,6 @@ namespace Ubisoft.Models
         public int Id { get; set; }
         public string Username { get; set; }
         public string Contraseña { get; set; }
-        public List<Compra> Compras { get; set; }
+        public virtual List<Compra> Compras { get; set; }
     }
 }

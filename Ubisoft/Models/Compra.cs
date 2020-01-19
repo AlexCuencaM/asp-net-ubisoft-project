@@ -7,11 +7,11 @@ namespace Ubisoft.Models
 {
     public class Compra
     {
-        public int Id { get; set; }
-        public double PrecioTotal { get; set; }
-        public int PersonaId { get; set; }
-        public Persona Comprador { get; set; }
+        public int Id { get; set; }        
         public DateTime FechaFactura { get; set; }
-        public List<ComprasProducto> ComprasProductos { get; set; }
+        public int PersonaId { get; set; }
+
+        public virtual Persona Comprador { get; set; }        
+        public virtual List<ComprasProducto> ComprasProductos { get; set; }
     }
 }

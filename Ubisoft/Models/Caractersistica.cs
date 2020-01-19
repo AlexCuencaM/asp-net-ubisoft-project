@@ -9,6 +9,6 @@ namespace Ubisoft.Models
     {
         public int Id { get; set; }
         public string Descripcion { get; set; }
-        public List<ProductoConCaracteristica> ProductoConCaracteristicas { get; set; }
+        public virtual List<ProductoConCaracteristica> ProductoConCaracteristicas { get; set; }
     }
 }
