@@ -8,17 +8,12 @@ using Ubisoft.Models;
 
 namespace Ubisoft.Controllers
 {
-    public class HomeController : Controller
-    {
-        private readonly UbisoftContext context;
-        public HomeController(UbisoftContext context)
-        {
-            this.context = context;
-        }
-
+    public class HomeController : BaseController
+    {        
+        public HomeController(UbisoftContext context) : base(context) { }        
         public IActionResult Index()
         {
-            var productos = context.Productos;
+            var productos = Context.Productos.ToList().GetRange(0,2);
             return View(productos);
         }
         

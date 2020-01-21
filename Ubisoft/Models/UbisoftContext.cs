@@ -20,7 +20,6 @@ namespace Ubisoft.Models
             base.OnModelCreating(model);
             var personas = CargarPersonas();
             var compras = CargarCompras(personas.ToList().First());
-
             var productos = CargarProductos();
             var productoCompra = CargarComprasProductos(productos.ToList().GetRange(2, 3), compras.ToList());
             var f = CargarCaractersisticas();
@@ -28,9 +27,7 @@ namespace Ubisoft.Models
 
             model.Entity<Producto>().HasData(CargarProductos().ToArray()) ;            
             model.Entity<Persona>().HasData(personas.ToArray());
-
             model.Entity<Compra>().HasData(compras.ToArray());
-
             model.Entity<ComprasProducto>().HasData(productoCompra.ToArray());
             model.Entity<Caractersistica>().HasData(f.ToArray());
             model.Entity<ProductoConCaracteristica>().HasData(product.ToArray());
@@ -59,10 +56,9 @@ namespace Ubisoft.Models
 
             };
         }
-        private IEnumerable<ComprasProducto> CargarComprasProductos(List<Producto> productos, List<Compra> compras)
+        private IEnumerable<ComprasProducto> CargarComprasProductos(List<Producto> productos, List<Compra> compras)//Retornar experimento
         {            
-            int cantidad = 5, i = 0;                         
-            var lista = new List<ComprasProducto>();
+            int cantidad = 5, i = 0;
 
             var experimento = from compra in compras from producto in productos
                 select new ComprasProducto {
@@ -72,7 +68,7 @@ namespace Ubisoft.Models
                     Cantidad = cantidad,
                     PrecioProducto = producto.Precio * ++cantidad
                 };
-            return lista;
+         return experimento;
         }
         private IEnumerable<Compra> CargarCompras(Persona persona)
         {                  
@@ -130,7 +126,7 @@ namespace Ubisoft.Models
             };            
             for (int _ = 0; _ < 3; _++)
                 foreach (var item in features[_])                
-                    productos.Add(new ProductoConCaracteristica { Id = i++, CaracteristicaId = item.Id, ProductoId = listaProducto[_].Id });                
+                    productos.Add(new ProductoConCaracteristica { Id = i++, CaractersisticaId = item.Id, ProductoId = listaProducto[_].Id });                
 
             return productos;            
         }
