@@ -1,42 +1,29 @@
-﻿@model Persona
-@{
+﻿@{
     ViewData["Title"] = "Login";
 }
 
 <main class="otro_main">
     <div>
         <h1 class="titulo">Iniciar Sesión</h1>
-        <div asp-validation-summary="All"></div>
-        @if (Model != null)
-        {
-            <p>Usuario @Model.Username logeado con exito</p>
-        }
-        
-        @if (ViewBag.error != null)
-        {
-            <p>@ViewBag.error</p>
-        }        
-            <form method="post">                
+        <form action="#">
+            <div class="login">
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" />
+            </div>
+            <div class="login">
+                <label for="clave">Contraseña</label>
+                <input type="password" id="clave">
+            </div>
 
-                <div class="login">
-                    <label asp-for="Username"></label>
-                    <input asp-for="Username" id="usuario" />
-                </div>
-                <div class="login">
-                    <label asp-for="Contraseña"></label>
-                    <input asp-for="Contraseña" type="password" id="clave">
-                </div>
+            <div class="login">
+                <button class="compra" type="submit">Ingresar</button>
+            </div>
+            <div class="login">
+                <a href="#">¿Olvidó su contraseña ?</a>
+                <a href="#">¿No tiene cuenta?, registrese en este link</a>
+            </div>
 
-                <div class="login">
-                    <button class="compra" type="submit">Ingresar</button>
-                </div>
-
-                <div class="login">
-                    <a href="#">¿Olvidó su contraseña ?</a>
-                    <a href="#">¿No tiene cuenta?, registrese en este link</a>
-                </div>
-
-            </form>
+        </form>
     </div>
 
 </main>

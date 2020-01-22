@@ -20,6 +20,7 @@ namespace Ubisoft.Models
             base.OnModelCreating(model);
             var personas = CargarPersonas();
             var compras = CargarCompras(personas.ToList().First());
+
             var productos = CargarProductos();
             var productoCompra = CargarComprasProductos(productos.ToList().GetRange(2, 3), compras.ToList());
             var f = CargarCaractersisticas();
@@ -27,7 +28,9 @@ namespace Ubisoft.Models
 
             model.Entity<Producto>().HasData(CargarProductos().ToArray()) ;            
             model.Entity<Persona>().HasData(personas.ToArray());
+
             model.Entity<Compra>().HasData(compras.ToArray());
+
             model.Entity<ComprasProducto>().HasData(productoCompra.ToArray());
             model.Entity<Caractersistica>().HasData(f.ToArray());
             model.Entity<ProductoConCaracteristica>().HasData(product.ToArray());
@@ -48,47 +51,50 @@ namespace Ubisoft.Models
             return new List<Producto>()
             {
 
-                new Producto{Titulo ="SUPER Mini Laptop HP STREAM 11", Descripcion=descripcion,Ruta=ruta },
-                new Producto{Titulo="IDEAL Laptop HP 17", Descripcion=descripcion2, Ruta=ruta2 },
-                new Producto {Titulo = "Calculadora Gráfica HP Prime G2 2019",Precio= 215, Ruta = "/img/calculadora-grafica-hp-prime-solohpcom-01_2.jpg" },
-                new Producto {Titulo = "Pendrive HP 16GB Modelo X750W", Ruta = "/img/pendrive-hp-x750w-16gb-solohpcom-01.jpg", Precio = 12 },
-                new Producto {Titulo = "Pendrive HP 32GB Modelo X750W", Ruta = "/img/pendrive-hp-x750w-16gb-solohpcom-01.jpg", Precio = 22 },
+                new Producto{Id=1, Titulo ="SUPER Mini Laptop HP STREAM 11", Descripcion=descripcion,Ruta=ruta },
+                new Producto{Id=2, Titulo="IDEAL Laptop HP 17", Descripcion=descripcion2, Ruta=ruta2 },
+                new Producto { Id = 3, Titulo = "Calculadora Gráfica HP Prime G2 2019",Precio= 215, Ruta = "/img/calculadora-grafica-hp-prime-solohpcom-01_2.jpg" },
+                new Producto { Id = 4, Titulo = "Pendrive HP 16GB Modelo X750W", Ruta = "/img/pendrive-hp-x750w-16gb-solohpcom-01.jpg", Precio = 12 },
+                new Producto { Id = 5, Titulo = "Pendrive HP 32GB Modelo X750W", Ruta = "/img/pendrive-hp-x750w-16gb-solohpcom-01.jpg", Precio = 22 },
 
             };
         }
-        private IEnumerable<ComprasProducto> CargarComprasProductos(List<Producto> productos, List<Compra> compras)//Retornar experimento
+        private IEnumerable<ComprasProducto> CargarComprasProductos(List<Producto> productos, List<Compra> compras)
         {            
-            int cantidad = 5;
+            int cantidad = 5, i = 0;                         
+            var lista = new List<ComprasProducto>();
 
             var experimento = from compra in compras from producto in productos
-                select new ComprasProducto {                     
+                select new ComprasProducto {
+                    Id = ++i,
                     ProductoId = producto.Id,
                     CompraId = compra.Id,
                     Cantidad = cantidad,
                     PrecioProducto = producto.Precio * ++cantidad
                 };
-         return experimento;
+            return lista;
         }
         private IEnumerable<Compra> CargarCompras(Persona persona)
         {                  
             return new List<Compra>
             {
-                new Compra(){  FechaFactura = DateTime.Now, PersonaId =persona.Id},
-                new Compra(){  FechaFactura = DateTime.Now, PersonaId =persona.Id},
-                new Compra(){  FechaFactura = DateTime.Now, PersonaId =persona.Id}
+                new Compra(){Id = 1, FechaFactura = DateTime.Now, PersonaId = persona.Id},
+                new Compra(){Id = 2, FechaFactura = DateTime.Now, PersonaId = persona.Id},
+                new Compra(){Id = 3, FechaFactura = DateTime.Now, PersonaId = persona.Id}
             };
         }
         private IEnumerable<Persona> CargarPersonas()
         {
             return new List<Persona>
             {
-                new Persona {  Username = "AlexCuencaM", Contraseña = "ES SECRETO >:v" },
-                new Persona {  Username = "El Alex 8y9", Contraseña = "ES OTRO SECRETO >:v" },
-                new Persona {  Username = "IMySQL", Contraseña = "PASSWORD :D" }
+                new Persona {Id = 1, Username = "AlexCuencaM", Contraseña = "ES SECRETO >:v" },
+                new Persona {Id = 2, Username = "El Alex 8y9", Contraseña = "ES OTRO SECRETO >:v" },
+                new Persona {Id = 3, Username = "IMySQL", Contraseña = "PASSWORD :D" }
             };
         }
         private IEnumerable<Caractersistica> CargarCaractersisticas()
-        {         
+        {
+            int id = 1;
             List<string> features = new List<string>
             {
                 { "Procesador: 528MHz" },{"RAM: 256MB +Rápida" },
@@ -99,13 +105,24 @@ namespace Ubisoft.Models
 
             return from feature in features select 
                         new Caractersistica
-                        {                             
+                        {
+                            Id = id++,
                             Descripcion = feature
-                        };            
+                        };
+            //return new List<Caractersistica>()
+            //{
+            //    new Caractersistica { Id = 1, Descripcion = "Procesador: 528MHz" },new Caractersistica { Id = 2, Descripcion = "RAM: 256MB +Rápida" },            
+            //    new Caractersistica { Id = 3, Descripcion = "Almacenamiento: 512MB" },new Caractersistica { Id = 4, Descripcion = "Pantalla: Multi-táctil a Color(320 x 240px)" },
+            //    new Caractersistica { Id = 11, Descripcion = "VELOCIDAD de 10MB/s write" },
+            //    new Caractersistica { Id = 5, Descripcion = "Manual: Español" },new Caractersistica { Id = 6, Descripcion = "Batería: Recargable" },
+            //    new Caractersistica { Id = 7, Descripcion = "Sistema Operativo: v14181" },new Caractersistica { Id = 8, Descripcion = "USB 3.0" },            
+            //    new Caractersistica { Id = 9, Descripcion = "IDEAL PARA LLAVERO" },new Caractersistica { Id = 10, Descripcion = "VELOCIDAD de 70MB/s read" },
+            //};
         }
         private IEnumerable<ProductoConCaracteristica> CargarProductoConCaracteristicas(List<Producto> listaProducto )
         {            
-            var productos = new List<ProductoConCaracteristica>();            
+            var productos = new List<ProductoConCaracteristica>();
+            int i = 1;            
             var features = new List<List<Caractersistica>> {
                 CargarCaractersisticas().ToList().GetRange(0, 7),
                 CargarCaractersisticas().ToList().GetRange(7, 4),
@@ -113,7 +130,7 @@ namespace Ubisoft.Models
             };            
             for (int _ = 0; _ < 3; _++)
                 foreach (var item in features[_])                
-                    productos.Add(new ProductoConCaracteristica {CaractersisticaId = item.Id, ProductoId = listaProducto[_].Id });                
+                    productos.Add(new ProductoConCaracteristica { Id = i++, CaracteristicaId = item.Id, ProductoId = listaProducto[_].Id });                
 
             return productos;            
         }
