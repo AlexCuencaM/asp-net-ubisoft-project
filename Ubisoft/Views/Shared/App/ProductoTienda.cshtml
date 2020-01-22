@@ -1,15 +1,15 @@
-﻿@model Producto
+﻿@model IGrouping<Producto, ProductoConCaracteristica>
 <article class="tienda">
-    <h3>@Model.Titulo</h3>
-    <div class="imagen">        
-        <img src=@Model.Ruta alt="articulo">
+    <h3>@Model.Key.Titulo</h3>
+    <div class="imagen">
+        <img src=@Model.Key.Ruta alt="articulo">
     </div>
     <ul>
-        @*@foreach (var features in Model.Features)
+        @foreach (var features in Model)
         {
-            <li>@features</li>
-        }*@
-        <li>Precio: @Model.Precio.ToString("C2")</li>
+            <li>@features.Caractersistica.Descripcion</li>
+        }
+        <li>Precio: @Model.Key.Precio.ToString("C2")</li>
         <li class="compra"><button class="compra">Comprar artefacto</button></li>
     </ul>
-</article>
+</article></article>

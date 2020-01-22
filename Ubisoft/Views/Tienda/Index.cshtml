@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Producto>
+﻿@model IQueryable<IGrouping<Producto, ProductoConCaracteristica>>
 <main>
     <h1 class="titulo">Tienda</h1>
     <div class="media">
@@ -8,9 +8,9 @@
         <small>Te damos la bienvenida a traves de este audio !</small>
     </div>
     <div class="products">
-        @foreach(var producto in Model)
+        @foreach (var producto in Model)
         {
-            <partial name="App/ProductoTienda" model="producto"/>
-        }                
+            <partial name="App/ProductoTienda" model="producto" />
+        }
     </div>
 </main>
