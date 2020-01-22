@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -6,7 +7,8 @@ namespace Ubisoft.Models
 {
     public class Producto
     {
-        public int Id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; } = 1;
         public string Titulo { get; set; }
         public string Descripcion { get; set; }
         public string Ruta { get; set; }

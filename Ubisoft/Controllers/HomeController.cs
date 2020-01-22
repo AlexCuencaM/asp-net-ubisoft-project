@@ -14,6 +14,7 @@ namespace Ubisoft.Controllers
         public IActionResult Index()
         {
             var productos = Context.Productos.ToList().GetRange(0,2);
+            Context.SaveChanges();
             return View(productos);
         }
         
