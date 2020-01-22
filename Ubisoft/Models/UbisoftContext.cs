@@ -108,16 +108,7 @@ namespace Ubisoft.Models
                         {
                             Id = id++,
                             Descripcion = feature
-                        };
-            //return new List<Caractersistica>()
-            //{
-            //    new Caractersistica { Id = 1, Descripcion = "Procesador: 528MHz" },new Caractersistica { Id = 2, Descripcion = "RAM: 256MB +Rápida" },            
-            //    new Caractersistica { Id = 3, Descripcion = "Almacenamiento: 512MB" },new Caractersistica { Id = 4, Descripcion = "Pantalla: Multi-táctil a Color(320 x 240px)" },
-            //    new Caractersistica { Id = 11, Descripcion = "VELOCIDAD de 10MB/s write" },
-            //    new Caractersistica { Id = 5, Descripcion = "Manual: Español" },new Caractersistica { Id = 6, Descripcion = "Batería: Recargable" },
-            //    new Caractersistica { Id = 7, Descripcion = "Sistema Operativo: v14181" },new Caractersistica { Id = 8, Descripcion = "USB 3.0" },            
-            //    new Caractersistica { Id = 9, Descripcion = "IDEAL PARA LLAVERO" },new Caractersistica { Id = 10, Descripcion = "VELOCIDAD de 70MB/s read" },
-            //};
+                        };            
         }
         private IEnumerable<ProductoConCaracteristica> CargarProductoConCaracteristicas(List<Producto> listaProducto )
         {            
