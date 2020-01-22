@@ -13,8 +13,7 @@ namespace Ubisoft.Controllers
         public HomeController(UbisoftContext context) : base(context) { }        
         public IActionResult Index()
         {
-            var productos = Context.Productos.ToList().GetRange(0,2);
-            Context.SaveChanges();
+            var productos = Context.Productos.ToList().GetRange(0,2);            
             return View(productos);
         }
         
