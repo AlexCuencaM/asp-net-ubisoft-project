@@ -36,6 +36,12 @@ namespace Ubisoft
                     {
                         options = options.UseInMemoryDatabase(databaseName: "Ubisoft");
                     });
+            string cadena = ConfigurationExtensions.GetConnectionString(this.Configuration,"DefaultConnection");
+            services.AddDbContext<UbisoftContext>(options =>
+            {
+                options = options.UseSqlServer(connectionString:cadena);
+            });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

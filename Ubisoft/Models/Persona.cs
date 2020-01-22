@@ -9,7 +9,8 @@ namespace Ubisoft.Models
     public class Persona
     {
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "El nombre de Usuario es requerido hijo de puta xd")]
+        [Display(Name = "Usuario")]
         public string Username { get; set; }
         [Required]
         public string Contraseña { get; set; }
