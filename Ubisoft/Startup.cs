@@ -32,10 +32,11 @@ namespace Ubisoft
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<UbisoftContext> (options =>
-                    {
-                        options = options.UseInMemoryDatabase(databaseName: "Ubisoft");
-                    });
+            //services.AddDbContext<UbisoftContext> (options =>
+            //        {
+            //            options = options.UseInMemoryDatabase(databaseName: "Ubisoft");
+            //        });
+
             string cadena = ConfigurationExtensions.GetConnectionString(this.Configuration,"DefaultConnectionString");
             services.AddDbContext<UbisoftContext>(options =>
             {
