@@ -10,7 +10,7 @@ namespace Ubisoft.Models
         public DbSet<Persona> Personas { get; set; }
         public DbSet<Compra> Compras { get; set; }
         public DbSet<ComprasProducto> ComprasProductos { get; set; }
-        public DbSet<Caractersistica> Caractersisticas { get; set; }
+        public DbSet<Caracteristica> Caractersisticas { get; set; }
         public DbSet<ProductoConCaracteristica> ProductoConCaracteristicas { get; set; }
 
 
@@ -32,7 +32,7 @@ namespace Ubisoft.Models
             model.Entity<Compra>().HasData(compras.ToArray());
 
             model.Entity<ComprasProducto>().HasData(productoCompra.ToArray());
-            model.Entity<Caractersistica>().HasData(f.ToArray());
+            model.Entity<Caracteristica>().HasData(f.ToArray());
             model.Entity<ProductoConCaracteristica>().HasData(product.ToArray());
 
         }
@@ -92,7 +92,7 @@ namespace Ubisoft.Models
                 new Persona {Id = 3, Username = "IMySQL", Contraseña = "PASSWORD :D" }
             };
         }
-        private IEnumerable<Caractersistica> CargarCaractersisticas()
+        private IEnumerable<Caracteristica> CargarCaractersisticas()
         {
             int id = 1;
             List<string> features = new List<string>
@@ -104,7 +104,7 @@ namespace Ubisoft.Models
             };
 
             return from feature in features select 
-                        new Caractersistica
+                        new Caracteristica
                         {
                             Id = id++,
                             Descripcion = feature
@@ -114,7 +114,7 @@ namespace Ubisoft.Models
         {            
             var productos = new List<ProductoConCaracteristica>();
             int i = 1;            
-            var features = new List<List<Caractersistica>> {
+            var features = new List<List<Caracteristica>> {
                 CargarCaractersisticas().ToList().GetRange(0, 7),
                 CargarCaractersisticas().ToList().GetRange(7, 4),
                 CargarCaractersisticas().ToList().GetRange(7, 3),

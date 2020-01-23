@@ -13,6 +13,6 @@ namespace Ubisoft.Models
         public int ProductoId { get; set; }
         public int CaracteristicaId { get; set; }
         public virtual Producto Producto { get; set; }
-        public virtual Caractersistica Caractersistica { get; set; }
+        public virtual Caracteristica Caracteristica { get; set; }
     }
 }
