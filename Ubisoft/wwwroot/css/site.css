@@ -135,7 +135,7 @@ figure {
 .products {
     /* Style for "Rectangle" */
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .tienda {
@@ -190,7 +190,7 @@ button.compra {
     padding: 10px;
 }
 .login input{
-    color: black;
+    color: var(--color-negro-oscuro);
 }
 label {
     display: inline-block;
@@ -211,6 +211,6 @@ footer {
     text-align: justify;
 }
 
-.content {
+/*.content {
     display: block;
-}
+}*/
