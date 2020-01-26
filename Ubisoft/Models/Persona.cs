@@ -11,10 +11,10 @@ namespace Ubisoft.Models
     {        
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [Required(ErrorMessage = "El nombre de Usuario es requerido hijo de puta xd")]
+        [Required(ErrorMessage = "El nombre de Usuario es requerido :(")]
         [Display(Name = "Usuario")]
         public string Username { get; set; }
-        [Required]
+        [Required(ErrorMessage = "La contraseña es requerida :(")]
         public string Contraseña { get; set; }
 
         public virtual List<Compra> Compras { get; set; }
