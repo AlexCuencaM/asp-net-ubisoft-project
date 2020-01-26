@@ -4,7 +4,6 @@
     "inputFiles": [
       "wwwroot/css/site.css",
       "wwwroot/css/normalize.css",
-
       "wwwroot/css/mobile.css"
 
     ]
